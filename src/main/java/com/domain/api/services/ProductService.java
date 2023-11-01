@@ -1,7 +1,5 @@
 package com.domain.api.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +16,7 @@ public class ProductService {
     @Autowired
     private ProductRepo productRepo;
 
-    public Product create(Product product){
+    public Product save(Product product){
         return productRepo.save(product);
     }
     
@@ -32,5 +30,9 @@ public class ProductService {
 
     public void removeOne(Long id){
         productRepo.deleteById(id);
+    }
+
+    public void findByName(String name){
+        productRepo.findByNameContains(name);
     }
 }

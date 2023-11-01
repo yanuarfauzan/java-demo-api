@@ -16,14 +16,13 @@ public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name = "product_name", length=100)
+    @Column(name = "product_name", length = 100)
     private String name;
 
-    @Column(name = "product_description", length=500)
+    @Column(name = "product_description", length = 500)
     private String description;
 
     private double price;
@@ -71,7 +70,8 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    
+    public Product() {
 
-    
+    }
+
 }
